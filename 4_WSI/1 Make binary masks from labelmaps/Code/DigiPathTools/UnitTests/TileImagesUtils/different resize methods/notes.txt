@@ -1,0 +1,3 @@
+nearest is bad for sizing up but best for sizing down, bilnear is best for sizing up. 
+for 57microns, I'll be mainly downsampling, so I'll go with nearest
+for 112microns, I'll use bilinear because I'll mainly upsample 

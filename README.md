@@ -47,5 +47,18 @@ model = tf.keras.models.load_model(model_path, custom_objects=None,compile=True)
 	- Run [this script](</3_Classification/Fig 6 and 7 - qualitative classification results/MakePredFN_FP.groovy>) from within the QuPath script editor.
 	- Note that this was also tested for QuPath 0.4.0 and 0.4.3 and it works for both.
 
-
 ## 4. WSI (fully contoured single WSI demonstration)
+- Prepare slide:
+	- Download slide indicated [here](</4_WSI/SlideName.txt>) from [GDC](https://portal.gdc.cancer.gov/).
+	- Import into a QuPath project.
+	- Contour cancer in the whole slide and label as **'Cancer'** in QuPath.
+	- Export tiles and their labelmaps using [this script](</4_WSI/ExportAllTile.groovy>) in the QuPath editor.
+- Make labelmaps into binary masks using [this experiment folder](</4_WSI/1 Make binary masks from labelmaps>).
+- Create .csv tables of tiles for python using [this experiment folder](</4_WSI/12 Make tile objects and tables>).
+- Make .csv tables that only contain non-clear slide tiles using [this experiment folder](</4_WSI/3 Find non-clear slide tiles>).
+- Classify the non-clear tiles using [this experiment folder](</4_WSI/4 Classify>).
+- For qualitiave results:
+	- Make tile prediction tables to plot back into QuPath using [this experiment folder](</4_WSI/5 Make QuPath plotting tables FN FP tables>).
+	- Follow the steps listed in [Classification](https://github.com/SalmaDammak/LungSqCCContentPrediction#3-classification).
+
+

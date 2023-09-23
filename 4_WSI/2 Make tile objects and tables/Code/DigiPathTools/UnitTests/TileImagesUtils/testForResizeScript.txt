@@ -1,0 +1,39 @@
+for 112 microns, the target resolution is 0.504
+for 57 microns, the target resolution is 0.2520
+
+test cases
+0.2520 TCGA-33-4547-01Z-00-DX1.7009df06-03f9-497a-b7bd-f8ef4244d152
+0.5040 TCGA-39-5022-01Z-00-DX1.1bf6a4da-0b59-4478-bcf1-b004f0356342
+0.2517 TCGA-58-A46N-01Z-00-DX1.5D51252C-5294-4E40-ABB2-31C3BE1039F8
+0.2265 TCGA-94-A5I4-01Z-00-DX1.F0CE4558-63A7-45FB-BA8C-1B20AB29A847
+
+57microns
+***
+modeTileSideLength_pixel = 224
+modeScanResolution_micronsPerPixel = 0.2520
+targetTileSideLengthSize_microns = modeTileSideLength_pixel * modeScanResolution_micronsPerPixel
+dRequiredTileSideLength_pixels = targetTileSideLengthSize_microns / resolution_micronsPerPixel
+iRequiredTileSideLength_pixels = Math.round(dRequiredTileSideLength_pixels)
+***
+
+--- what I want to check ---
+- what is the actual and exact (to many d.p.s) size of the tiles for each slide in microns?
+> iRequiredTileSideLength_pixels * resolution_micronsPerPixel
+> later down the line, check if this slight inexactness affects results (false positive results)
+
+- did QuPath do the export correctly?
+> do the same math as the Groovy code and make sure the output values match
+> get the size of a sample tile and make sure it actually sized as the iRequiredTileSideLength_pixels
+
+- Are tiles the correct tile size and resolution?
+> Make sure that at the end of the export and resize pipeline, with all its rounding errors, the tile has the right number of pixels and the target resolution
+> do this for a tile that
+	1) matches the target
+	2) is smaller than the target
+	3) is larger than the
+	4) is very close to the target size
+
+- what resize method looks best for tissue tiles?
+- what does an NN resize look like for the labelmaps?
+- is the targetTileSideLengthSize_microns consistent for all slides?
+
