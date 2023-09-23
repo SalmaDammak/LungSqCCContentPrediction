@@ -2,23 +2,23 @@
 
 To skip directly to the model instructions, go [here](https://github.com/SalmaDammak/LungSqCCContentPrediction#trained-model).
 
-Whenever a folder contains "Experiment.m", it is an experiment folder that must be run as following. In MATLAB, change directory to the folder of interest and type Experiment.Run() in the command prompt then hit Enter. The results will be produced in a time-stamped copy of the folder.
+Whenever a folder contains Experiment.m, it is an "experiment folder" that must be run as following. In MATLAB, change directory to the folder of interest and type ```Experiment.Run()``` in the command prompt then hit Enter. The results will be produced in a time-stamped copy of the folder.
 For this to work, the paths in datapath.txt should have the exact path to the correct directory/file on your computer.
 
 ## 1. Images
 Steps:
-- Download [list of slides](</1_Images/ListOfSlidesBySet.csv> from the [GDC](https://portal.gdc.cancer.gov/).
+- Download [list of slides](</1_Images/ListOfSlidesBySet.csv>) from the [GDC](https://portal.gdc.cancer.gov/).
 - Import all slides into QuPath 0.3.2.
 - In QuPath click "View > Show Grid", then go to "View > Set Grid Spacing" and set spacing to 1,260 for both, and click "Use microns"
 - Create contours in QuPath at 12.5 tp 20x with the brush tool, naming the classes with the exact spelling in quotes:
-	- 'Central': draw two 1260 x 1260 squares in the central region of the tumour
-	- 'Peripheral': draw two 1260 x 1260 squares in the peripheral region of the tumour
-	- 'Central Non-Viable Tumour': contour non-viable tumour within the central squares
-	- 'Central Viable Tumour': contour viable tumour within the central squares
-	- 'Peripheral Non-Viable Tumour': contour non-viable tumour within the peripheral squares
-	- 'Peripheral Viable Tumour': contour viable tumour within the peripheral squares
-	- 'Non-Cancer Non-Tumour': contour area outside the tumour at low mgnification
-- Run [this script] (</1_Images/0p2520_Foci.groovy>) and [this one](</1_Images/0p2520_NCNT.groovy>) by copying the code in them into "QuPath > Automate > Show script editor" to obtain tiles and their labelmaps
+	- **'Central'**: draw two 1260 x 1260 squares in the central region of the tumour
+	- **'Peripheral'**: draw two 1260 x 1260 squares in the peripheral region of the tumour
+	- **'Central Non-Viable Tumour'**: contour non-viable tumour within the central squares
+	- **'Central Viable Tumour'**: contour viable tumour within the central squares
+	- **'Peripheral Non-Viable Tumour'**: contour non-viable tumour within the peripheral squares
+	- **'Peripheral Viable Tumour'**: contour viable tumour within the peripheral squares
+	- **'Non-Cancer Non-Tumour'**: contour area outside the tumour at low mgnification
+- Run [this script](</1_Images/0p2520_Foci.groovy>) and [this one](</1_Images/0p2520_NCNT.groovy>) by copying the code in them into "QuPath > Automate > Show script editor" to obtain tiles and their labelmaps
 - A label of 0 in the resultant labelmaps is an "unknown" label. Remove tiles with this label using [this experiment folder](</1_Images/1 Remove tiles with unkown label>).
 - Make tile objects using [this experiment folder](</1_Images/2 Make tile objects>)
 - Split patients for the experiments using [this experiment folder](</1_Images/3 Split patients>)
