@@ -1,0 +1,2 @@
+TablesDir : G:\Users\sdammak\Experiments\LUSC Segment\116 slides\0p2520 regression\4 Collect tile tables for python [2022-09-23_15.54.23]\Results\03 Test\TilesWithScalarTargets.csv
+Model: G:\Users\sdammak\Experiments\LUSC Segment\116 slides\0p2520 regression\6 Train and validate once [2022-09-27_16.09.38]\Results\01 In python\Model

@@ -6,28 +6,33 @@ Whenever a folder contains Experiment.m, it is an "experiment folder" that must 
 For this to work, the paths in datapath.txt should have the exact path to the correct directory/file on your computer.
 
 ## 1. Images
-Steps:
 - Download [list of slides](</1_Images/ListOfSlidesBySet.csv>) from the [GDC](https://portal.gdc.cancer.gov/).
 - Import all slides into QuPath 0.3.2.
-- In QuPath click "View > Show Grid", then go to "View > Set Grid Spacing" and set spacing to 1,260 for both, and click "Use microns"
+- In QuPath click "View > Show Grid", then go to "View > Set Grid Spacing" and set spacing to 1,260 for both, and click "Use microns".
 - Create contours in QuPath at 12.5 tp 20x with the brush tool, naming the classes with the exact spelling in quotes:
-	- **'Central'**: draw two 1260 x 1260 squares in the central region of the tumour
-	- **'Peripheral'**: draw two 1260 x 1260 squares in the peripheral region of the tumour
-	- **'Central Non-Viable Tumour'**: contour non-viable tumour within the central squares
-	- **'Central Viable Tumour'**: contour viable tumour within the central squares
-	- **'Peripheral Non-Viable Tumour'**: contour non-viable tumour within the peripheral squares
-	- **'Peripheral Viable Tumour'**: contour viable tumour within the peripheral squares
-	- **'Non-Cancer Non-Tumour'**: contour area outside the tumour at low mgnification
-- Run [this script](</1_Images/0p2520_Foci.groovy>) and [this one](</1_Images/0p2520_NCNT.groovy>) by copying the code in them into "QuPath > Automate > Show script editor" to obtain tiles and their labelmaps
+	- **'Central'**: draw two 1260 x 1260 squares in the central region of the tumour,
+	- **'Peripheral'**: draw two 1260 x 1260 squares in the peripheral region of the tumour,
+	- **'Central Non-Viable Tumour'**: contour non-viable tumour within the central squares,
+	- **'Central Viable Tumour'**: contour viable tumour within the central squares,
+	- **'Peripheral Non-Viable Tumour'**: contour non-viable tumour within the peripheral squares,
+	- **'Peripheral Viable Tumour'**: contour viable tumour within the peripheral squares, and
+	- **'Non-Cancer Non-Tumour'**: contour area outside the tumour at low mgnification.
+- Run [this script](</1_Images/0p2520_Foci.groovy>) and [this one](</1_Images/0p2520_NCNT.groovy>) by copying the code in them into "QuPath > Automate > Show script editor" to obtain tiles and their labelmaps.
 - A label of 0 in the resultant labelmaps is an "unknown" label. Remove tiles with this label using [this experiment folder](</1_Images/1 Remove tiles with unkown label>).
-- Make tile objects using [this experiment folder](</1_Images/2 Make tile objects>)
-- Split patients for the experiments using [this experiment folder](</1_Images/3 Split patients>)
+- Make tile objects using [this experiment folder](</1_Images/2 Make tile objects>).
+- Split patients for the experiments using [this experiment folder](</1_Images/3 Split patients>).
 
-The code to generate Tables 1 and 2 is also in the (</1_Images>) folder.
+The code to generate Tables 1 and 2 is also in the [1_Images](</1_Images>) folder.
 Note that Table 1 requires exporting the LUSC dataset clinical information from [cBioPortal](https://www.cbioportal.org/) and the [GDC](https://portal.gdc.cancer.gov/).
 
 ## 2. Regression
-- "/2_Regression/1 Collect tile tables for python"
+- Create csv files for each slide, grouped in dataset folders using [this experiment folder](</2_Regression/1 Collect tile tables for python>).
+- Run the optional but recommended quality control step double checking that the datasets do no contain any centres in common using [this experiment folder](</2_Regression/2 Quality control step - dataset check>).
+- Train the model and validate it using [this experiment folder](</2_Regression/3 Train and validate>).
+	- the yml file to build the virtual environment is [here](</2_Regression/keras_env.yml). In the miniconda3 command prompt use ```conda env create -f environment.yml --name keras_env
+``` to build the same virtual environment I used.
+- Test the model on the regions of interest using [this experiment folder](<4 Test on foci>). Note that this will include clear tiles, giving an optimistic result. This is not what we reported in the paper, and instead reported the results after removing clear slides by first using [this experiment folder](</2_Regression/Fig 1 - regression error/1 Remove clear tiles>) then [this one (Fig 1)](</2_Regression/Fig 1 - regression error/2 Make plots>).
+- For per centre results, we used [this experiment folder](</2_Regression/Fig 2 - regression error by center/1 Make plots>).
 
 ### Trained model
 The model is currently stored [here](https://uwoca-my.sharepoint.com/:u:/g/personal/sdammak_uwo_ca/EaUAWC6ClFhDodxLFLlEhiEBTD-prS0cUuDmy9woDCGBnA?e=1ic20a).
@@ -42,7 +47,3 @@ model = tf.keras.models.load_model(model_path, custom_objects=None,compile=True)
 
 
 ## 4. WSI (fully contoured single WSI demonstration)
-
-
-
-## 5. Figures and tables
