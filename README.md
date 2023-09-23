@@ -21,16 +21,13 @@ For this to work, the paths in datapath.txt should have the exact path to the co
 - A label of 0 in the resultant labelmaps is an "unknown" label. Remove tiles with this label using [this experiment folder](</1_Images/1 Remove tiles with unkown label>).
 - Make tile objects using [this experiment folder](</1_Images/2 Make tile objects>).
 - Split patients for the experiments using [this experiment folder](</1_Images/3 Split patients>).
-
-The code to generate Tables 1 and 2 is also in the [1_Images](</1_Images>) folder.
-Note that Table 1 requires exporting the LUSC dataset clinical information from [cBioPortal](https://www.cbioportal.org/) and the [GDC](https://portal.gdc.cancer.gov/).
+- The code to generate Tables 1 and 2 is also in the [1_Images](</1_Images>) folder. Note that Table 1 requires exporting the LUSC dataset clinical information from [cBioPortal](https://www.cbioportal.org/) and the [GDC](https://portal.gdc.cancer.gov/).
 
 ## 2. Regression
 - Create csv files for each slide, grouped in dataset folders using [this experiment folder](</2_Regression/1 Collect tile tables for python>).
 - Run the optional but recommended quality control step double checking that the datasets do no contain any centres in common using [this experiment folder](</2_Regression/2 Quality control step - dataset check>).
 - Train the model and validate it using [this experiment folder](</2_Regression/3 Train and validate>).
-	- the yml file to build the virtual environment is [here](</2_Regression/keras_env.yml). In the miniconda3 command prompt use ```conda env create -f environment.yml --name keras_env
-``` to build the same virtual environment I used.
+	- the yml file to build the virtual environment is [here](</2_Regression/keras_env.yml). In the miniconda3 command prompt use ```conda env create -f environment.yml --name keras_env``` to build the same virtual environment I used.
 - Test the model on the regions of interest using [this experiment folder](<4 Test on foci>). Note that this will include clear tiles, giving an optimistic result. This is not what we reported in the paper, and instead reported the results after removing clear slides by first using [this experiment folder](</2_Regression/Fig 1 - regression error/1 Remove clear tiles>) then [this one (Fig 1)](</2_Regression/Fig 1 - regression error/2 Make plots>).
 - For per centre results, we used [this experiment folder](</2_Regression/Fig 2 - regression error by center/1 Make plots>).
 
