@@ -7,7 +7,7 @@ For this to work, the paths in datapath.txt should have the exact path to the co
 
 ## 1. Images
 - Download [list of slides](</1_Images/ListOfSlidesBySet.csv>) from the [GDC](https://portal.gdc.cancer.gov/).
-- Import all slides into QuPath 0.3.2.
+- Create a QuPath 0.3.2. project and import all slides into it.
 - In QuPath click "View > Show Grid", then go to "View > Set Grid Spacing" and set spacing to 1,260 for both, and click "Use microns".
 - Create contours in QuPath at 12.5 tp 20x with the brush tool, naming the classes with the exact spelling in quotes:
 	- **'Central'**: draw two 1260 x 1260 squares in the central region of the tumour,
@@ -27,9 +27,9 @@ For this to work, the paths in datapath.txt should have the exact path to the co
 - Create csv files for each slide, grouped in dataset folders using [this experiment folder](</2_Regression/1 Collect tile tables for python>).
 - Run the optional but recommended quality control step double checking that the datasets do no contain any centres in common using [this experiment folder](</2_Regression/2 Quality control step - dataset check>).
 - Train the model and validate it using [this experiment folder](</2_Regression/3 Train and validate>).
-	- the yml file to build the virtual environment is [here](</2_Regression/keras_env.yml). In the miniconda3 command prompt use ```conda env create -f environment.yml --name keras_env``` to build the same virtual environment I used.
-- Test the model on the regions of interest using [this experiment folder](<4 Test on foci>). Note that this will include clear tiles, giving an optimistic result. This is not what we reported in the paper, and instead reported the results after removing clear slides by first using [this experiment folder](</2_Regression/Fig 1 - regression error/1 Remove clear tiles>) then [this one (Fig 1)](</2_Regression/Fig 1 - regression error/2 Make plots>).
-- For per centre results, we used [this experiment folder](</2_Regression/Fig 2 - regression error by center/1 Make plots>).
+	- the .yml file to build the virtual environment is [here](</2_Regression/keras_env.yml>). In the miniconda3 command prompt use ```conda env create -f environment.yml --name keras_env``` to build the same virtual environment I used.
+- Test the model on the regions of interest using [this experiment folder](</2_Regression/4 Test on foci>). Note that this will include clear tiles, giving an optimistic result. This is not what we reported in the paper, and instead reported the results after removing clear slides by first using [this experiment folder](</2_Regression/Fig 1 - regression error/1 Remove clear tiles>) then [this one (Fig 3)](</2_Regression/Fig 1 - regression error/2 Make plots>).
+- For per centre results, use [this experiment folder (Fig 4)](</2_Regression/Fig 2 - regression error by center/1 Make plots>).
 
 ### Trained model
 The model is currently stored [here](https://uwoca-my.sharepoint.com/:u:/g/personal/sdammak_uwo_ca/EaUAWC6ClFhDodxLFLlEhiEBTD-prS0cUuDmy9woDCGBnA?e=1ic20a).
@@ -39,8 +39,13 @@ import tensorflow as tf
 model = tf.keras.models.load_model(model_path, custom_objects=None,compile=True)
 ```
 
-
 ## 3. Classification
+- Get the classification AUCs for different thresholds and the associated ROC using [this experiment folder (Fig 5)](</3_Classification/Fig 5 - ROCs and AUCs>).
+- To the qualitative results do the following:
+	- Run [this experiment folder](</3_Classification/Fig 6 and 7 - qualitative classification results/1 Make QuPath plotting tables>) to get the list of tiles predicted as true/false positive/negative. This will be in the form of .csv files that will be in the results folder.
+	- Make a "predictionTables" in the QuPath project folder and copy the .csv files into it.
+	- Run [this script](</3_Classification/Fig 6 and 7 - qualitative classification results/MakePredFN_FP.groovy>) from within the QuPath script editor.
+	- Note that this was also tested for QuPath 0.4.0 and 0.4.3 and it works for both.
 
 
 ## 4. WSI (fully contoured single WSI demonstration)
