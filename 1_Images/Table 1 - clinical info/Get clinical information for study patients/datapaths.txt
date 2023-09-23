@@ -1,0 +1,3 @@
+ClinicalInfo: E:\Users\sdammak\Data\LUSC\Original\Clinical\clinical.project-TCGA-LUSC.2023-05-11-fromTheGDC\clinical.tsv
+ClinicalInfoCBP: E:\Users\sdammak\Data\LUSC\Original\Clinical\lusc_tcga_pan_can_atlas_2018_clinical_data-fromCbioportal.tsv
+AllIds: G:\Users\sdammak\Experiments\LUSC Segment\116 slides\0p2520\1 Split patients [2022-09-06_17.37.06]\Results\01 Experiment Section\SlideNameBySet.mat
