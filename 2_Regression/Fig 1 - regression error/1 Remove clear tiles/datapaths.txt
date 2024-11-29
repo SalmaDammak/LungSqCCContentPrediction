@@ -1,2 +1,2 @@
-Results : G:\Users\sdammak\Experiments\LUSC Segment\116 slides\0p2520 regression\15 Validate on test patches - tumour only [2022-10-25_13.22.06]\Results\02 MATLAB\Workspace_in_MATLAB.mat
-TestClearAndTissueTiles: E:\Users\sdammak\Manuscripts\3 Segmentation algorithm (pathology informatics)\4 Writing\3 Results\Figures and tables\Table 2 - dataset split\1 Find clear slides [2023-06-29_13.15.14]\Results\01 Experiment Section\03 Test.mat
+Results : E:\Users\sdammak\Repos\LungSqCCContentPrediction\2_Regression\3 Train and validate [2022-10-25_13.22.06]\Results\02 MATLAB\Workspace_in_MATLAB.mat
+TestClearAndTissueTiles: E:\Users\sdammak\Repos\LungSqCCContentPrediction\1_Images\3 Split patients [2023-06-29_13.15.14]\Results\01 Experiment Section\03 Test.mat

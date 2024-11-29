@@ -1,0 +1,2 @@
+TablesBaseDir : E:\Users\sdammak\Repos\LungSqCCContentPrediction\2_Regression\Fig 1 - regression error\1 Remove clear tiles [2022-11-02_08.20.09]\Results\01 Experiment Section\Tables for non-blank tiles
+Model: E:\Users\sdammak\Repos\LungSqCCContentPrediction\2_Regression\3 Train and validate [2022-09-27_16.09.38]\Results\01 In python\Model

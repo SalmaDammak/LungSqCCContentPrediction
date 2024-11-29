@@ -1,2 +1,2 @@
-ResultsDir : G:\Users\sdammak\Experiments\LUSC Segment\116 slides\0p2520 regression\18 Classify test tiles [2022-11-03_09.00.04]\Results
+ResultsDir : E:\Users\sdammak\Repos\LungSqCCContentPrediction\3_Classification\1 Classify test tiles [2022-11-03_09.00.04]\Results
 SlideDir : E:\Users\sdammak\Data\LUSC\Original\Histology

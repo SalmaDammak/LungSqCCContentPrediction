@@ -1,2 +1,2 @@
-TablesDir : G:\Users\sdammak\Experiments\LUSC Segment\116 slides\0p2520 regression single WSI\3 Remove clear slide tiles [2023-04-18_15.21.24]\Results\01 Experiment Section\TCGA-22-1012-01Z-00-DX1.053F81FA-F91A-42B0-8F12-CD2495FA9E99.csv
-Model: G:\Users\sdammak\Experiments\LUSC Segment\116 slides\0p2520 regression\6 Train and validate once [2022-09-27_16.09.38]\Results\01 In python\Model
+TablesDir : E:\Users\sdammak\Repos\LungSqCCContentPrediction\4_WSI\3 Find non-clear slide tiles [2023-04-18_15.21.24]\Results\01 Experiment Section\TCGA-22-1012-01Z-00-DX1.053F81FA-F91A-42B0-8F12-CD2495FA9E99.csv
+Model: E:\Users\sdammak\Repos\LungSqCCContentPrediction\2_Regression\3 Train and validate [2022-09-27_16.09.38]\Results\01 In python\Model

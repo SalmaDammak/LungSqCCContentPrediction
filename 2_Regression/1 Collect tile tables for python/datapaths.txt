@@ -1,2 +1,2 @@
-DatasetSplit: G:\Users\sdammak\Experiments\LUSC Segment\116 slides\0p2520\1 Split patients [2022-09-06_17.37.06]
-RootTileObjDir : G:\Users\sdammak\Experiments\LUSC Segment\116 slides\0p2520\3 Make tile objects [2022-09-07_10.31.44]
+DatasetSplit: E:\Users\sdammak\Repos\LungSqCCContentPrediction\1_Images\3 Split patients [2022-09-06_17.37.06]
+RootTileObjDir : E:\Users\sdammak\Repos\LungSqCCContentPrediction\1_Images\2 Make tile objects [2022-09-07_10.31.44]
