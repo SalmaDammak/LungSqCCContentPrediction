@@ -32,7 +32,7 @@ For this to work, the paths in datapath.txt should have the exact path to the co
 - For per centre results, use [this experiment folder (Fig 4)](</2_Regression/Fig 2 - regression error by center/1 Make plots>).
 
 ### Trained model
-The model is currently stored [here](https://uwoca-my.sharepoint.com/:u:/g/personal/sdammak_uwo_ca/EaUAWC6ClFhDodxLFLlEhiEBTD-prS0cUuDmy9woDCGBnA?e=1ic20a).
+The model is currently stored [here](https://drive.google.com/file/d/1NBerw3yvLAQmXWghtfP4M087Yun7CB9B/view?usp=drive_link).
 To load the model, download and unzip the "Model" folder, set ```model_path``` to where the Model file is and run the following in python:
 ```
 import tensorflow as tf
