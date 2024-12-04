@@ -1,4 +1,5 @@
-# Lung Squamous Cell Carcinoma (SqCC) Content Prediction
+# Lung Squamous Cell Carcinoma (SqCC) Content Prediction 
+[[Link to publication]](https://www.sciencedirect.com/science/article/pii/S0010482524015749)
 
 To skip directly to the model instructions, go [here](https://github.com/SalmaDammak/LungSqCCContentPrediction#trained-model).
 
